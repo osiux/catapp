@@ -21,9 +21,12 @@
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-query": "^2.4.5",
+        "react-query-devtools": "^2.1.1",
         "react-router": "^6.0.0-beta.0",
         "react-router-dom": "^6.0.0-beta.0",
         "react-scripts": "3.4.1",
+        "react-spinners": "^0.9.0",
+        "tiny-flag-react": "^2.0.1",
         "typescript": "~3.7.2"
     },
     "scripts": {

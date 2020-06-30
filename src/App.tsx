@@ -1,5 +1,12 @@
 import React from "react";
 import { ReactQueryConfigProvider } from "react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ReactQueryDevtools } from "react-query-devtools";
+
+import NavBar from "./components/NavBar";
+
+import Home from "./pages/Home";
+import Breeds from "./pages/Breeds";
 
 import "./App.scss";
 
@@ -13,21 +20,20 @@ const queryConfig = {
 const App = () => {
     return (
         <ReactQueryConfigProvider config={queryConfig}>
-            <div className="container">
-                <header className="App-header">
-                    <p>
-                        Edit <code>src/App.tsx</code> and save to reload.
-                    </p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
-                </header>
-            </div>
+            <ReactQueryDevtools />
+            <BrowserRouter>
+                <div className="container">
+                    <NavBar />
+                    <Routes>
+                        <Route path="/">
+                            <Home />
+                        </Route>
+                        <Route path="/breeds">
+                            <Breeds />
+                        </Route>
+                    </Routes>
+                </div>
+            </BrowserRouter>
         </ReactQueryConfigProvider>
     );
 };
